@@ -2,9 +2,9 @@ package ru.netology
 
 object Wall {
     private var posts = emptyArray<Post>()
-    private var newPostId = posts.lastIndex + 2
 
     fun add(post: Post): Post {
+        val newPostId = posts[posts.lastIndex].id + 1
         posts += post.copy(id = newPostId)
         return posts.last()
     }
