@@ -10,9 +10,17 @@ data class Post (
     val canDelete: Boolean,
     val canEdit: Boolean,
     val isPinned: Boolean,
-    val comments: Comments
+    val comments: Comments?
         ) {
-
+    override fun toString(): String {
+        var printPostProp: String
+        printPostProp = "id: $id, ownerId: $ownerId, fromId: $fromId, date: $date, text: $text, canPin; $canPin," +
+                    "canDelete: $canDelete, canEdit: $canEdit, isPinned: $isPinned"
+        if(comments == null) {
+            printPostProp += "Comments: $comments.count"
+        }
+        return printPostProp
+    }
 }
 
 data class Comments (
