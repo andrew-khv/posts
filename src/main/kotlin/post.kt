@@ -10,7 +10,8 @@ data class Post (
     val canDelete: Boolean,
     val canEdit: Boolean,
     val isPinned: Boolean,
-    val comments: Comments?
+    val comments: Comments?,
+    val attachements: Array<Attachement>
         ) {
     override fun toString(): String {
         var printPostProp: String
