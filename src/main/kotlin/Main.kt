@@ -5,7 +5,7 @@ object Wall {
 
     fun add(post: Post): Post {
         val newPostId: Int
-        if(posts.size > 0) {
+        if(posts.isNotEmpty()) {
             newPostId = posts[posts.lastIndex].id + 1
         }
         else newPostId = 1
@@ -24,7 +24,7 @@ object Wall {
     }
 
     fun clearWall() {
-        posts = emptyArray<Post>()
+        posts = emptyArray()
     }
 }
 
