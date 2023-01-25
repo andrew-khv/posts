@@ -10,7 +10,7 @@ data class Post (
     val canDelete: Boolean,
     val canEdit: Boolean,
     val isPinned: Boolean,
-    val comments: Comments?
+    var comments: Array<Comment>
         ) {
     override fun toString(): String {
         var printPostProp: String
@@ -23,12 +23,11 @@ data class Post (
     }
 }
 
-data class Comments (
-    val count: Int,
-    val canPost: Boolean,
-    val groupsCanPost: Boolean,
-    val canClose: Boolean,
-    val canOpen: Boolean
+data class Comment (
+    val id: Int,
+    val fromId: Int,
+    val date: Int,
+    val text: String,
         ) {
 
 }
